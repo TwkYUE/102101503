@@ -26,7 +26,7 @@ keyword = content
 cookies = requests.get('https://www.bilibili.com/', headers=headers).cookies.get_dict()
 bvids = []
 #获取多少个页面的信息，一个页面有20个，共需要15页
-for page in range(0, 1):
+for page in range(0, 15):
     url = f"https://api.bilibili.com/x/web-interface/wbi/search/type?keyword={keyword}&search_type=video&page={page + 1}"
     response = requests.get(url, headers=headers, cookies=cookies)
     if response.status_code == 200:#只有是200才能算请求成功
