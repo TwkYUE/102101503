@@ -37,4 +37,4 @@ for page in range(0, 15):
     else:
         print(f"请求失败，状态码：{response.status_code}")
     
-#print(bvids)检验BV号是否正确提取出来
+print(bvids)检验BV号是否正确提取出来
