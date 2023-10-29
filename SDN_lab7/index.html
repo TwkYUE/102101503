@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>SDN 控制器</title>
+  <link rel="icon" href="/path-to-your-favicon.ico" type="image/x-icon">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      text-align: center;
+    }
+    .container {
+      margin: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .card {
+
+  border-radius: 5px;
+  padding: 20px;
+  margin: 10px auto; /* 设置左右margin为auto以实现水平居中 */
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+    .card2 {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 20px;
+      margin: 10px;
+      width: 200px;
+      height: 200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .card:hover {
+      border-color: #666;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px;
+      font-size: 16px;
+      background-color: #da5b64;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #d27a7a;
+    }
+  </style>
+</head>
+<body>
+  <h1>sdn_lab7</h1>
+  <div class="card">
+    <h2>已连接拓扑</h2>
+    <button onclick="navigateToNextPage()">确定</button>
+</div>
+<script>
+  function navigateToNextPage() {
+    // 使用 window.location.href 跳转到下一个界面的URL
+    window.location.href = 'index2.html';
+  }
+   
+  </script>
+</body>
+</html>
