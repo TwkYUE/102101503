@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>SDN 控制器</title>
+  <link rel="icon" href="/path-to-your-favicon.ico" type="image/x-icon">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      text-align: center;
+    }
+    .container {
+      margin: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .card {
+      border: 1px solid #300202;
+      border-radius: 5px;
+      padding: 20px;
+      margin: 10px;
+      width: 200px;
+      height: 200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .card2 {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 20px;
+      margin: 10px;
+      width: 300px;
+      height: 200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .card:hover {
+      border-color: #666;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px;
+      font-size: 16px;
+      background-color: #da5b64;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #d27a7a;
+    }
+  </style>
+</head>
+<body>
+  <h1>sdn_lab7</h1>
+  <div class="container">
+    <div class="card">
+      <h2>硬超时</h2>
+      <button onclick="sendRequest('/timeout', this)">执行</button>
+    </div>
+    <div class="card2">
+        <div class="message"></div>
+    </div>
+      
+    <div class="card">
+      <h2>获取流表数</h2>
+      <button onclick="sendRequest('/getflow', this)">执行</button>
+    </div>
+    <div class="card2">
+        <div class="message"></div>
+    </div>
+    <div class="card">
+        <h2>删除流表项</h2>
+        <button onclick="sendRequest('/delete', this)">执行</button>
+      </div>
+      <div class="card2">
+          <div class="message"></div>
+      </div>
+        
+      <div class="card">
+        <h2>获取拓扑信息</h2>
+        <button onclick="sendRequest('/getinfo', this)">执行</button>
+      </div>
+      <div class="card2">
+          <div class="message"></div>
+      </div>
+      <div class="card">
+        <h2>VLAN 划分</h2>
+        <button onclick="sendRequest('/vlan', this)">执行</button>
+      </div>
+      <div class="card2">
+          <div class="message"></div>
+      </div>
+        
+      <div class="card">
+        <h2>查看流表项</h2>
+        <button onclick="sendRequest('/getflows', this)">执行</button>
+      </div>
+      <div class="card2">
+          <div class="message"></div>
+      </div>
+  </div>
+  <script>
+    function sendRequest(route, button) {
+      fetch(route)
+        .then(response => response.text())
+        .then(data => {
+          // 找到与点击按钮关联的父级 "card" 元素
+          const card = button.closest('.card');
+          
+          // 找到与 "card" 元素相邻的下一个 "card2" 元素
+          const nextCard2 = card.nextElementSibling;
+          
+          // 找到 "card2" 元素内的 "message" 元素
+          const messageDiv = nextCard2.querySelector('.message');
+          
+          // 将数据插入 "message" 元素中
+          messageDiv.innerHTML = data;
+        })
+        .catch(error => console.error(error));
+    }
+
+  </script>
+</body>
+</html>
