@@ -1,3 +1,15 @@
 # 软件定义网络实验七（前端实现）
 - 采用js代码来响应端口3000，实现前端界面，后端是基础阶要求的代码
 - 安装node.js和express.js框架
+- 文件结构组成如下
+  - 项目根目录
+  - public
+    - timeout.py
+    - getflow.py
+    - delete.py
+    - getinfo.py
+    - vlan.py
+    - getflows.py
+  - proxy.js
+- 运行方式 node proxy.js，打开浏览器。
+- 初始界面会询问用户是否连接好控制器（ODL或者RYU），连接好会跳转到展示界面
