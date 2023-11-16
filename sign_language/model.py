@@ -8,6 +8,7 @@ from keras.optimizers import Adam
 from hmmlearn import hmm
 from sklearn.base import BaseEstimator
 from keras.callbacks import ModelCheckpoint  # 导入ModelCheckpoint
+
 # 定义一个继承自BaseEstimator的模型类
 class MyModel(BaseEstimator):
     def __init__(self, hidden_units=1024):
