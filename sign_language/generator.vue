@@ -3,7 +3,6 @@ import { mapState } from "vuex";
 import axios from 'axios';
 const MediaRecorder = window.MediaRecorder;
 const URL = window.URL || window.webkitURL;
-
 export default {
 	data() {
 		return {
